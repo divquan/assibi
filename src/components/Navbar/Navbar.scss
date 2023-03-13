@@ -1,0 +1,113 @@
+.navbar_container-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  height: auto;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.418);
+  padding: 1.3rem 2.3rem;
+  position: relative;
+
+  @media screen and (max-width: 375px) {
+    padding: 13px 8px;
+  }
+
+  .navbar_logo {
+    gap: 0.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    img {
+      height: 38px;
+      width: auto;
+    }
+    span {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #6200de;
+    }
+    @media screen and (max-width: 375px) {
+      img {
+        width: auto;
+        height: 37px;
+      }
+      span {
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+  .navbar_links {
+    display: flex;
+    gap: 2rem;
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+    .link_active {
+      color: #6200de;
+    }
+    a {
+      font-size: 16px;
+      color: black;
+      text-decoration: none;
+      font-weight: 600;
+      opacity: 0.8;
+      border-bottom: #4d04ac00 solid 2px;
+      transition: 0.4s ease-in;
+      &:hover {
+        opacity: 1;
+        border-bottom: #6200de solid 2px;
+      }
+    }
+  }
+  .navbar_icons {
+    display: flex;
+    gap: 1rem;
+
+    svg {
+      cursor: pointer;
+      border-bottom: rgba(255, 255, 255, 0) 2px solid;
+      transition: 0.4s ease-out;
+      padding: 1px;
+      &:hover,
+      :focus {
+        border-bottom: #6200de 2px solid;
+      }
+    }
+  }
+  .navbar_mobile-menu_icon {
+    cursor: pointer;
+    border: 2px white solid;
+    display: none;
+    z-index: 2;
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
+    &:focus {
+      border: 2px rgba(0, 0, 0, 0.13) solid;
+    }
+  }
+  .navbar_mobile-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: calc(10px + 3vw);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.37);
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(6px);
+    z-index: 1;
+    a {
+      font-size: calc(24px + 1vw);
+      text-decoration: none;
+      font-weight: 600;
+      color: rgba(8, 8, 8, 0.897);
+    }
+  }
+}
