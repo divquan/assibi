@@ -8,6 +8,7 @@ import Sell from "./pages/Sell/Sell";
 import RentOut from "./pages/RentOut/RentOut";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import Register from "./pages/Register/Register";
+import Cart from "./pages/Cart/Cart";
 
 const Layout = () => {
   return (
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
       { path: "/sell", element: <Sell /> },
       { path: "/rent-out", element: <RentOut /> },
       { path: "/about-us", element: <AboutUs /> },
+      { path: "/cart", element: <Cart /> },
       // { path: "/register", element: <Register /> },
     ],
   },

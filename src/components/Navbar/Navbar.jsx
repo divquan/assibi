@@ -8,46 +8,66 @@ import {
   AiOutlineSearch,
   AiOutlineMenu,
   AiOutlineClose,
+  AiOutlineUser,
 } from "react-icons/ai";
+import UserProfile from "./UserProfile";
 
 const Navbar = () => {
   const location = useLocation().pathname;
   const [toggle, setToggle] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
 
   return (
     <div className="navbar_container-main">
-      <Link to="/" className="navbar_logo">
-        <img src={logo} alt="logo" />
-        <span>assibi</span>
-      </Link>
       <div className="navbar_links">
-        <Link to="/sell" className={location === "/sell" && "link_active"}>
+        <Link
+          to="/about-us"
+          className={location === "/about-us" ? "link_active" : undefined}
+        >
+          About Us
+        </Link>
+        <Link
+          to="/sell"
+          className={location === "/sell" ? "link_active" : undefined}
+        >
           Sell
         </Link>
         <Link
           to="/rent-out"
-          className={location === "/rent-out" && "link_active"}
+          className={location === "/rent-out" ? "link_active" : undefined}
         >
           Rent Out
         </Link>
-        <Link
-          to="/about-us"
-          className={location === "/about-us" && "link_active"}
-        >
-          About US
-        </Link>
-        <Link
-          to="/register"
-          className={location === "/register" && "link_active"}
-        >
-          Sign Up
-        </Link>
+
+        <div className="search-field">
+          {showSearch && <input type="text" />}
+          <AiOutlineSearch
+            size={28}
+            onClick={() => setShowSearch((init) => !init)}
+          />
+        </div>
       </div>
-      <div className="navbar_icons">
+
+      <Link to="/" className="navbar_logo">
+        <img src={logo} alt="logo" />
+        <span>assibi</span>
+      </Link>
+
+      <Link to="cart" className="navbar_icons">
         <AiOutlineShoppingCart size={28} />
-        <AiOutlineBell size={28} />
-        <AiOutlineSearch size={28} />
-      </div>
+
+        {/*conditionally render sign in link*/}
+        {true ? (
+          <UserProfile />
+        ) : (
+          <Link
+            to="/register"
+            className={location === "/register" && "link_active"}
+          >
+            Sign Up
+          </Link>
+        )}
+      </Link>
       <div
         className="navbar_mobile-menu_icon"
         onClick={() => setToggle((prev) => !prev)}
@@ -82,15 +102,6 @@ const Navbar = () => {
             className={location === "/about-us" && "link_active"}
           >
             About US
-          </Link>
-          <Link
-            onClick={() => {
-              setToggle(false);
-            }}
-            to="/register"
-            className={location === "/register" && "link_active"}
-          >
-            Sign Up
           </Link>
         </div>
       )}
