@@ -10,7 +10,7 @@ import {
   MDBRipple,
   MDBBtn,
 } from "mdb-react-ui-kit";
-import "./card.css";
+import "./card.scss";
 import image from "../../assets/fruits.jpg";
 
 const Card2 = () => {
@@ -135,7 +135,7 @@ const Card2 = () => {
                     <span>100% cotton</span>
                     <span className="text-primary"> • </span>
                     <span>Light weight</span>
-                    <span classNAme="text-primary"> • </span>
+                    <span className="text-primary"> • </span>
                     <span>
                       Best finish
                       <br />

@@ -4,6 +4,8 @@ import tool from "./assets/tool.jpg";
 import meat from "./assets/meat.jpg";
 import snacks from "./assets/snacks.jpg";
 import dairy from "./assets/dairy.jpg";
+import egg from "./assets/egg.jpg";
+import land from "./assets/land.jpg";
 
 export const categories = [
   { name: "Fruits & Vegetables", img: fruits },
@@ -50,5 +52,35 @@ export const shoppingCarts = [
     currency: ["USD", "$"],
     price: "1799",
     quantity: 1,
+  },
+];
+
+export const topSavers = [
+  {
+    img: egg,
+    multiplier: "5",
+    itemName: "Eggs",
+    initPrice: "200 π",
+    price: "40 π",
+    category: "Food Product",
+    available: "50 crates",
+  },
+  {
+    img: land,
+    multiplier: "2",
+    itemName: "Land",
+    initPrice: "13,000 π",
+    price: "7, 500 π",
+    category: "Property",
+    available: "5 plots",
+  },
+  {
+    img: machinery,
+    multiplier: "3",
+    itemName: "Heavy Duty Tractor",
+    initPrice: "60,000 π",
+    price: "20, 500 π",
+    category: "Property",
+    available: "5 plots",
   },
 ];

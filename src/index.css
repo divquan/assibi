@@ -20,6 +20,7 @@ body {
   font-size: 16px;
   box-sizing: border-box;
   color: black;
+  scroll-behavior: smooth;
 }
 
 #root {

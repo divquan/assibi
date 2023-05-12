@@ -11,11 +11,8 @@ const Home = () => {
     <section className="home-container">
       <HeroSection />
       <Categories />
-      <h2>Buy farm produce</h2>
       <div className="jjj">
-        <Card1 />
         <Card2 />
-        <Card3 />
       </div>
     </section>
   );
