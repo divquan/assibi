@@ -2,35 +2,25 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100vw;
   height: auto;
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.418);
-  padding: 15px 20px;
-  position: fixed;
+  padding: 15px 25px;
+  position: relative;
   z-index: 3;
   background-color: white;
 
   .navbar_logo {
-    position: absolute;
-    left: calc(50% - 56px);
-    top: 0;
     gap: 0.1rem;
     display: flex;
-    flex-direction: column-reverse;
-    padding: 0px 50px 12px 50px;
-    width: 112px;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
     cursor: pointer;
     text-decoration: none;
-    border-radius: 0 0 120px 120px;
-    background-color: white;
     img {
       height: 60px;
       width: auto;
     }
     span {
-      padding-top: 0.35rem;
       font-size: 1.5rem;
       font-weight: bold;
       color: #6200de;
@@ -56,14 +46,13 @@
       color: #6200de;
     }
     a {
-      font-size: 1.1rem;
+      font-weight: 500;
+      font-size: 1.2rem;
       color: black;
       text-decoration: none;
-      opacity: 0.8;
       border-bottom: #4d04ac00 solid 2px;
       transition: 0.4s ease-in;
       &:hover {
-        opacity: 1;
         border-bottom: #6200de solid 2px;
       }
     }

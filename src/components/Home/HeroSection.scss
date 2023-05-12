@@ -1,0 +1,63 @@
+.hero_section-container {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  background-image: url(../../assets/doodle.jpg);
+  //   height: ;
+  backdrop-filter: blur(10px);
+  gap: 2rem;
+  
+}
+
+.hero_section-uno {
+  position: relative;
+  border-radius: 16px;
+  border: solid 3px green;
+  overflow: hidden;
+  width: 58%;
+  img {
+    aspect-ratio: 16/8;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  div {
+    position: absolute;
+    bottom: 3rem;
+    left: 1.5rem;
+    opacity: 1;
+    h2 {
+      color: white;
+      width: 10ch;
+      font-size: 3rem;
+    }
+    p {
+      color: white;
+    }
+  }
+}
+.hero_section-duo {
+  //   flex: 1;
+  // height: 100%;
+  width: 37%;
+  border: solid 3px red;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  background-color: rgb(255, 255, 110);
+  div {
+    position: absolute;
+    bottom: 3rem;
+    left: 1.5rem;
+    color: white;
+    opacity: 1;
+    h2 {
+      width: 10ch;
+      font-size: 3rem;
+    }
+    p {
+    }
+  }
+}

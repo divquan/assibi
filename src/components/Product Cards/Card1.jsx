@@ -8,8 +8,9 @@ import {
   MDBCardImage,
   MDBIcon,
 } from "mdb-react-ui-kit";
+import image from "../../assets/machinery.jpg";
 
-function App() {
+function Card1() {
   return (
     <MDBContainer fluid className="my-5">
       <MDBRow>
@@ -24,11 +25,7 @@ function App() {
                 <p className="text-white mb-0 small">x4</p>
               </div>
             </div>
-            <MDBCardImage
-              src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/4.webp"
-              position="top"
-              alt="Laptop"
-            />
+            <MDBCardImage src={image} position="top" alt="Laptop" />
             <MDBCardBody>
               <div className="d-flex justify-content-between">
                 <p className="small">
@@ -72,11 +69,7 @@ function App() {
                 <p className="text-white mb-0 small">x2</p>
               </div>
             </div>
-            <MDBCardImage
-              src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/7.webp"
-              position="top"
-              alt="Laptop"
-            />
+            <MDBCardImage src={image} position="top" alt="Laptop" />
             <MDBCardBody>
               <div className="d-flex justify-content-between">
                 <p className="small">
@@ -120,11 +113,7 @@ function App() {
                 <p className="text-white mb-0 small">x3</p>
               </div>
             </div>
-            <MDBCardImage
-              src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/5.webp"
-              position="top"
-              alt="Gaming Laptop"
-            />
+            <MDBCardImage src={image} position="top" alt="Gaming Laptop" />
             <MDBCardBody>
               <div className="d-flex justify-content-between">
                 <p className="small">
@@ -162,4 +151,4 @@ function App() {
   );
 }
 
-export default App;
+export default Card1;

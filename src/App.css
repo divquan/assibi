@@ -1,0 +1,16 @@
+.assibi_icon {
+
+    aspect-ratio: 1;
+    padding: 3.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: fit-content;
+
+    cursor: pointer;
+}
+
+.assibi_icon:hover {
+    background-color: #6000de2c;
+}

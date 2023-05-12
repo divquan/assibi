@@ -11,8 +11,9 @@ import {
   MDBBtn,
 } from "mdb-react-ui-kit";
 import "./card.css";
+import image from "../../assets/fruits.jpg";
 
-function App() {
+const Card2 = () => {
   return (
     <MDBContainer fluid>
       <MDBRow className="justify-content-center mb-0">
@@ -26,11 +27,7 @@ function App() {
                     rippleTag="div"
                     className="bg-image rounded hover-zoom hover-overlay"
                   >
-                    <MDBCardImage
-                      src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/img%20(4).webp"
-                      fluid
-                      className="w-100"
-                    />
+                    <MDBCardImage src={image} fluid className="w-100" />
                     <a href="#!">
                       <div
                         className="mask"
@@ -114,11 +111,7 @@ function App() {
                     rippleTag="div"
                     className="bg-image rounded hover-zoom hover-overlay"
                   >
-                    <MDBCardImage
-                      src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/new/img(4).webp"
-                      fluid
-                      className="w-100"
-                    />
+                    <MDBCardImage src={image} fluid className="w-100" />
                     <a href="#!">
                       <div
                         className="mask"
@@ -202,11 +195,7 @@ function App() {
                     rippleTag="div"
                     className="bg-image rounded hover-zoom hover-overlay"
                   >
-                    <MDBCardImage
-                      src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/new/img(5).webp"
-                      fluid
-                      className="w-100"
-                    />
+                    <MDBCardImage src={image} fluid className="w-100" />
                     <a href="#!">
                       <div
                         className="mask"
@@ -281,6 +270,6 @@ function App() {
       </MDBRow>
     </MDBContainer>
   );
-}
+};
 
-export default App;
+export default Card2;

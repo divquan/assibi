@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Navbar.scss";
 import logo from "../../assets/logo.png";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   AiOutlineShoppingCart,
   AiOutlineBell,
@@ -16,96 +16,108 @@ const Navbar = () => {
   const location = useLocation().pathname;
   const [toggle, setToggle] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
+  const navigate = useNavigate();
 
   return (
-    <div className="navbar_container-main">
-      <div className="navbar_links">
-        <Link
-          to="/about-us"
-          className={location === "/about-us" ? "link_active" : undefined}
-        >
-          About Us
+    <>
+      <div className="navbar_container-main">
+        <Link to="/" className="navbar_logo">
+          <img src={logo} alt="logo" />
+          <span>assibi</span>
         </Link>
-        <Link
-          to="/sell"
-          className={location === "/sell" ? "link_active" : undefined}
-        >
-          Sell
-        </Link>
-        <Link
-          to="/rent-out"
-          className={location === "/rent-out" ? "link_active" : undefined}
-        >
-          Rent Out
-        </Link>
-
-        <div className="search-field">
-          {showSearch && <input type="text" />}
-          <AiOutlineSearch
-            size={28}
-            onClick={() => setShowSearch((init) => !init)}
-          />
-        </div>
-      </div>
-
-      <Link to="/" className="navbar_logo">
-        <img src={logo} alt="logo" />
-        <span>assibi</span>
-      </Link>
-
-      <Link to="cart" className="navbar_icons">
-        <AiOutlineShoppingCart size={28} />
-
-        {/*conditionally render sign in link*/}
-        {true ? (
-          <UserProfile />
-        ) : (
+        <div className="navbar_links">
           <Link
-            to="/register"
-            className={location === "/register" && "link_active"}
+            to="/about-us"
+            className={location === "/about-us" ? "link_active" : undefined}
           >
-            Sign Up
+            About Us
           </Link>
-        )}
-      </Link>
-      <div
-        className="navbar_mobile-menu_icon"
-        onClick={() => setToggle((prev) => !prev)}
-      >
-        {toggle ? <AiOutlineClose size={24} /> : <AiOutlineMenu size={24} />}
-      </div>
-      {toggle && (
-        <div className="navbar_mobile-menu">
           <Link
-            onClick={() => {
-              setToggle(false);
-            }}
             to="/sell"
-            className={location === "/sell" && "link_active"}
+            className={location === "/sell" ? "link_active" : undefined}
           >
             Sell
           </Link>
           <Link
-            onClick={() => {
-              setToggle(false);
-            }}
             to="/rent-out"
-            className={location === "/rent-out" && "link_active"}
+            className={location === "/rent-out" ? "link_active" : undefined}
           >
             Rent Out
           </Link>
-          <Link
-            onClick={() => {
-              setToggle(false);
-            }}
-            to="/about-us"
-            className={location === "/about-us" && "link_active"}
-          >
-            About US
-          </Link>
+
+          <div className="search-field">
+            {showSearch && <input type="text" />}
+            <AiOutlineSearch
+              size={28}
+              onClick={() => setShowSearch((init) => !init)}
+            />
+          </div>
         </div>
-      )}
-    </div>
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: 14,
+            alignContent: "center",
+          }}
+        >
+          <AiOutlineShoppingCart
+            size={40}
+            className="assibi_icon"
+            onClick={() => navigate("/cart")}
+          />
+          {/*conditionally render sign in link*/}
+          {true ? (
+            <UserProfile />
+          ) : (
+            <Link
+              to="/register"
+              className={location === "/register" && "link_active"}
+            >
+              Sign Up
+            </Link>
+          )}
+        </div>
+        <div
+          className="navbar_mobile-menu_icon"
+          onClick={() => setToggle((prev) => !prev)}
+        >
+          {toggle ? <AiOutlineClose size={24} /> : <AiOutlineMenu size={24} />}
+        </div>
+        {toggle && (
+          <div className="navbar_mobile-menu">
+            <Link
+              onClick={() => {
+                setToggle(false);
+              }}
+              to="/sell"
+              className={location === "/sell" && "link_active"}
+            >
+              Sell
+            </Link>
+            <Link
+              onClick={() => {
+                setToggle(false);
+              }}
+              to="/rent-out"
+              className={location === "/rent-out" && "link_active"}
+            >
+              Rent Out
+            </Link>
+            <Link
+              onClick={() => {
+                setToggle(false);
+              }}
+              to="/about-us"
+              className={location === "/about-us" && "link_active"}
+            >
+              About US
+            </Link>
+          </div>
+        )}
+      </div>
+    </>
   );
 };
 

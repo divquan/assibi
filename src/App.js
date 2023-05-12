@@ -9,6 +9,7 @@ import RentOut from "./pages/RentOut/RentOut";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import Register from "./pages/Register/Register";
 import Cart from "./pages/Cart/Cart";
+import "./App.css";
 
 const Layout = () => {
   return (
