@@ -1,15 +1,21 @@
-.navbar_container-main {
+.navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: auto;
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.418);
-  padding: 15px 25px;
+  padding: 20px 25px;
   position: relative;
   z-index: 3;
   background-color: white;
 
-  .navbar_logo {
+  @media (width <= 850px) {
+    // flex-direction: column;
+  }
+  @media (width <= 550px) {
+    padding: 0;
+  }
+  &_logo {
     gap: 0.1rem;
     display: flex;
     flex-direction: row;
@@ -23,9 +29,13 @@
     span {
       font-size: 1.5rem;
       font-weight: bold;
-      color: #6200de;
+      color: #4b00b3;
     }
-    @media screen and (max-width: 375px) {
+    @media (width<=850px) {
+      display: block;
+      order: 2;
+    }
+    @media screen and (max-width: 550px) {
       img {
         width: auto;
         height: 37px;
@@ -36,102 +46,95 @@
     }
   }
 
-  .navbar_links {
+  &_search {
     display: flex;
-    gap: 2rem;
-    @media screen and (max-width: 768px) {
+    align-items: center;
+    justify-content: stretch;
+    @media (width <= 850px) {
       display: none;
     }
-    .link_active {
-      color: #6200de;
-    }
-    a {
-      font-weight: 500;
-      font-size: 1.2rem;
-      color: black;
-      text-decoration: none;
-      border-bottom: #4d04ac00 solid 2px;
-      transition: 0.4s ease-in;
-      &:hover {
-        border-bottom: #6200de solid 2px;
+    input {
+      padding: 4px 7px;
+      font-size: 1.05rem;
+      border: 1px solid black;
+      // border-right: none;
+      &:focus {
+        outline: none;
       }
     }
-    .search-field {
-      transition: 4s ease-in;
-      .search-field__modal {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.842);
-      }
+    select {
+      padding: 4px 7px;
+      border: 1px solid black;
+      font-size: 1.05rem;
+      border-left: none;
+      background-color: #fff;
+    }
+    &_icon {
+      cursor: pointer;
+      background-color: yellow;
+      border: 1px #000 solid;
+      border-left: none;
+      padding: 2px 6px;
       svg {
-        cursor: pointer;
-      }
-      input {
-        padding: 0 7px;
       }
     }
   }
-  .navbar_icons {
+
+  &_icons {
     display: flex;
     gap: 1rem;
     align-items: center;
     justify-content: center;
-    svg {
-      cursor: pointer;
-      border-bottom: rgba(255, 255, 255, 0) 2px solid;
-      transition: 0.4s ease-out;
-      padding: 1px;
-      &:hover,
-      :focus {
-        border-bottom: #6200de 2px solid;
-      }
+    @media (width <= 850px) {
+      order: 3;
+      gap: 2px;
     }
-  }
-  .navbar_mobile-menu_icon {
-    cursor: pointer;
-    border: 2px white solid;
-    display: none;
-    z-index: 2;
-    @media screen and (max-width: 768px) {
-      display: block;
-    }
-    &:focus {
-      border: 2px rgba(0, 0, 0, 0.13) solid;
-    }
-  }
-  .navbar_mobile-menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: calc(10px + 3vw);
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.37);
-    top: 0;
-    left: 0;
-    backdrop-filter: blur(6px);
-    z-index: 1;
-    a {
-      // font-size: calc(24px + 1vw);
-      text-decoration: none;
-      font-weight: 600;
-      color: rgba(8, 8, 8, 0.897);
-    }
-  }
-
-  @media screen and (max-width: 375px) {
-    padding: 13px 8px;
-  }
-  @media screen and (max-width: 768px) {
-    padding: 13px 8px;
-    flex-direction: row-reverse;
   }
 }
+
+.navbar_mobile-menu_icon {
+  cursor: pointer;
+  border: 2px white solid;
+  display: none;
+  z-index: 2;
+  @media (width<=850px) {
+    display: block;
+    order: 0;
+  }
+  &:focus {
+    border: 2px rgba(0, 0, 0, 0.13) solid;
+  }
+}
+//   .navbar_mobile-menu {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//     gap: calc(10px + 3vw);
+//     width: 100vw;
+//     height: 100vh;
+//     position: absolute;
+//     background-color: rgba(255, 255, 255, 0.37);
+//     top: 0;
+//     left: 0;
+//     backdrop-filter: blur(6px);
+//     z-index: 1;
+//     a {
+//       // font-size: calc(24px + 1vw);
+//       text-decoration: none;
+//       font-weight: 600;
+//       color: rgba(8, 8, 8, 0.897);
+//     }
+//   }
+
+//   @media screen and (max-width: 375px) {
+//     padding: 13px 8px;
+//   }
+//   @media screen and (max-width: 768px) {
+//     padding: 13px 8px;
+//     flex-direction: row-reverse;
+//   }
+// }
 
 .navbar_cart {
   position: fixed;

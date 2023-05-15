@@ -20,50 +20,38 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="navbar_container-main">
+      <div className="navbar">
         <Link to="/" className="navbar_logo">
           <img src={logo} alt="logo" />
           <span>assibi</span>
         </Link>
-        <div className="navbar_links">
-          <Link
-            to="/about-us"
-            className={location === "/about-us" ? "link_active" : undefined}
-          >
-            About Us
-          </Link>
-          <Link
-            to="/sell"
-            className={location === "/sell" ? "link_active" : undefined}
-          >
-            Sell
-          </Link>
-          <Link
-            to="/rent-out"
-            className={location === "/rent-out" ? "link_active" : undefined}
-          >
-            Rent Out
-          </Link>
-
-          <div className="search-field">
-            {showSearch && <input type="text" />}
-            <AiOutlineSearch
-              size={28}
-              onClick={() => setShowSearch((init) => !init)}
-            />
+        <div className="navbar_search">
+          <input type="text" placeholder="search" />
+          <select className="" id="">
+            <option value="0" selected="selected">
+              All Categories
+            </option>
+            <option className="" value="">
+              Baby &amp; Child
+            </option>
+            <option className="" value="">
+              &nbsp;&nbsp;&nbsp;Bouncers
+            </option>
+            <option className="" value="">
+              &nbsp;&nbsp;&nbsp;Nursery
+            </option>
+            <option className="" value="">
+              Pushchairs
+            </option>
+          </select>
+          <div className="navbar_search_icon">
+            <AiOutlineSearch size={30} />
           </div>
         </div>
 
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            gap: 14,
-            alignContent: "center",
-          }}
-        >
+        <div className="navbar_icons">
           <AiOutlineShoppingCart
-            size={40}
+            size={36}
             className="assibi_icon"
             onClick={() => navigate("/cart")}
           />
@@ -79,6 +67,7 @@ const Navbar = () => {
             </Link>
           )}
         </div>
+
         <div
           className="navbar_mobile-menu_icon"
           onClick={() => setToggle((prev) => !prev)}

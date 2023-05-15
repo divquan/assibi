@@ -10,7 +10,7 @@ const UserProfile = () => {
         style={{ width: "36px", borderRadius: "32px", cursor: "pointer" }}
       /> */}
       {/* <AiOutlineBell size={28} /> */}
-      <BiUserCircle size={40} className="assibi_icon" />
+      <BiUserCircle size={36} className="assibi_icon" />
       {/* <div></div> */}
     </>
   );
