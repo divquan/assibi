@@ -1,113 +1,62 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Navbar.scss";
+import { SlLocationPin } from "react-icons/sl";
+import { BsTelephone } from "react-icons/bs";
+import { MdOutlineShoppingCart, MdShoppingCartCheckout } from "react-icons/md";
 import logo from "../../assets/logo.png";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import {
-  AiOutlineShoppingCart,
-  AiOutlineBell,
-  AiOutlineSearch,
-  AiOutlineMenu,
-  AiOutlineClose,
-  AiOutlineUser,
-} from "react-icons/ai";
-import UserProfile from "./UserProfile";
-
+import Searchbar from "./searchbar";
+import { AiOutlineHeart, AiOutlineUser } from "react-icons/ai";
 const Navbar = () => {
-  const location = useLocation().pathname;
-  const [toggle, setToggle] = useState(false);
-  const [showSearch, setShowSearch] = useState(false);
-  const navigate = useNavigate();
-
   return (
-    <>
-      <div className="navbar">
-        <Link to="/" className="navbar_logo">
-          <img src={logo} alt="logo" />
-          <span>assibi</span>
-        </Link>
-        <div className="navbar_search">
-          <input type="text" placeholder="search" />
+    <div className="navbarr">
+      <div className="navbarr_section1 d-flex justify-content-between w-100 ">
+        <div className="d-flex gap-2">
+          <Tag name="8049 High Ridge St. Saint Joseph" Svg={SlLocationPin} />|
+          <Tag name="Hotline: 970 978-6290" Svg={BsTelephone} />
+        </div>
+        <div className="d-flex gap-2">
+          <a href="/#">
+            <Tag name="Checkout" Svg={MdShoppingCartCheckout} />
+          </a>
+
           <select className="" id="">
             <option value="0" selected="selected">
-              All Categories
+              🇬🇧 English
             </option>
             <option className="" value="">
-              Baby &amp; Child
+              🇫🇷France
             </option>
             <option className="" value="">
-              &nbsp;&nbsp;&nbsp;Bouncers
-            </option>
-            <option className="" value="">
-              &nbsp;&nbsp;&nbsp;Nursery
-            </option>
-            <option className="" value="">
-              Pushchairs
+              🇨🇳China
             </option>
           </select>
-          <div className="navbar_search_icon">
-            <AiOutlineSearch size={30} />
-          </div>
         </div>
-
-        <div className="navbar_icons">
-          <AiOutlineShoppingCart
-            size={36}
-            className="assibi_icon"
-            onClick={() => navigate("/cart")}
-          />
-          {/*conditionally render sign in link*/}
-          {true ? (
-            <UserProfile />
-          ) : (
-            <Link
-              to="/register"
-              className={location === "/register" && "link_active"}
-            >
-              Sign Up
-            </Link>
-          )}
-        </div>
-
-        <div
-          className="navbar_mobile-menu_icon"
-          onClick={() => setToggle((prev) => !prev)}
-        >
-          {toggle ? <AiOutlineClose size={24} /> : <AiOutlineMenu size={24} />}
-        </div>
-        {toggle && (
-          <div className="navbar_mobile-menu">
-            <Link
-              onClick={() => {
-                setToggle(false);
-              }}
-              to="/sell"
-              className={location === "/sell" && "link_active"}
-            >
-              Sell
-            </Link>
-            <Link
-              onClick={() => {
-                setToggle(false);
-              }}
-              to="/rent-out"
-              className={location === "/rent-out" && "link_active"}
-            >
-              Rent Out
-            </Link>
-            <Link
-              onClick={() => {
-                setToggle(false);
-              }}
-              to="/about-us"
-              className={location === "/about-us" && "link_active"}
-            >
-              About US
-            </Link>
-          </div>
-        )}
       </div>
-    </>
+      <div className="navbarr_section2 d-flex justify-content-between align-items-center w-100">
+        <div className=" d-flex gap-2 align-items-center">
+          <img style={{ width: "auto", height: 45 }} src={logo} alt="" />
+          <div className="help-box">Need help?</div>
+        </div>
+        <Searchbar />
+        <div className="navbar-icons">
+          <AiOutlineHeart size={24} />
+          <MdOutlineShoppingCart size={24} />
+          <AiOutlineUser size={24} />
+        </div>
+      </div>
+      <div className="navbarr_section3"></div>
+      <div />
+    </div>
   );
 };
 
 export default Navbar;
+
+const Tag = ({ Svg, name }) => {
+  return (
+    <div className="tag">
+      <Svg />
+      <span>{name}</span>
+    </div>
+  );
+};
