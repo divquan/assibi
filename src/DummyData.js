@@ -84,3 +84,11 @@ export const topSavers = [
     available: "5 plots",
   },
 ];
+
+export const languages = [
+  { name: " 🇬🇧 English", value: "en" },
+
+  { name: " 🇫🇷 France", value: "fr" },
+
+  { name: " 🇨🇳 China", value: "ch" },
+];

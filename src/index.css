@@ -5,6 +5,11 @@
 
 body {
   margin: 0;
+}
+
+:root{
+  --bgcolor-primary: #26901b;
+  --bgcolor-secondary: #116709;
 
 }
 

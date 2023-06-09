@@ -3,7 +3,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 const searchbar = () => {
   return (
     <div className="navbarr_search">
-      <input type="text" placeholder="search" />
+      <input type="text" placeholder="I am searching for ..." />
       <select className="" id="">
         <option value="0" selected="selected">
           All Categories
