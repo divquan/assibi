@@ -3,8 +3,12 @@ import { AiOutlineSearch } from "react-icons/ai";
 const searchbar = () => {
   return (
     <div className="navbarr_search">
-      <input type="text" placeholder="I am searching for ..." />
-      <select className="" id="">
+      <input
+        type="text"
+        className="border-0 rounded-start "
+        placeholder="I am searching for ..."
+      />
+      <select className="border-0 " id="">
         <option value="0" selected="selected">
           All Categories
         </option>
@@ -21,7 +25,7 @@ const searchbar = () => {
           Pushchairs
         </option>
       </select>
-      <div className="navbarr_search_icon">
+      <div className="navbarr_search_icon rounded-end">
         <AiOutlineSearch size={30} />
       </div>
     </div>

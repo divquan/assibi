@@ -4,6 +4,7 @@ import { categories, topSavers } from "../../../DummyData";
 import Carousel from "react-bootstrap/Carousel";
 import Card3 from "../../Product Cards/Card3";
 import Card1 from "../../Product Cards/Card1";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const Categories = () => {
   const ref1 = useRef();
@@ -21,14 +22,20 @@ const Categories = () => {
           <h2>Browse by Category</h2> <span>All Categories</span>
         </div>
         <div className="category-items slider-button" ref={ref1}>
-          <button className="scroll-btn1" onClick={() => scroll(-650)}>
-            {"<<"}
+          <button
+            className="scroll-btn1 align-items-center border-0 btn btn-dark justify-content-center rounded-circle text-white"
+            onClick={() => scroll(-650)}
+          >
+            <IoIosArrowBack size={28} />
           </button>
           {categories.map(({ name, img }) => {
             return <Card3 key={name} category={name} img={img} />;
           })}
-          <button className="scroll-btn2" onClick={() => scroll(650)}>
-            {">>"}
+          <button
+            className="align-items-center border-0 btn btn-dark justify-content-center rounded-circle text-white scroll-btn2 "
+            onClick={() => scroll(650)}
+          >
+            <IoIosArrowForward size={28} />
           </button>
         </div>
       </div>
@@ -37,8 +44,11 @@ const Categories = () => {
           <h2>Top Saver</h2> <span>All Categories</span>
         </div>
         <div className="category-items  slider-button " ref={ref2}>
-          <button className="scroll-btn1" onClick={() => scrolla(-650)}>
-            {"<<"}
+          <button
+            className="scroll-btn1 align-items-center border-0 btn btn-dark justify-content-center rounded-circle text-white"
+            onClick={() => scrolla(-650)}
+          >
+            <IoIosArrowForward />
           </button>
 
           {topSavers.map(
@@ -63,8 +73,11 @@ const Categories = () => {
               />
             )
           )}
-          <button className="scroll-btn2" onClick={() => scrolla(650)}>
-            {">>"}
+          <button
+            className="scroll-btn2 align-items-center border-0 btn btn-dark justify-content-center rounded-circle text-white"
+            onClick={() => scrolla(650)}
+          >
+            <IoIosArrowBack />
           </button>
         </div>
       </div>

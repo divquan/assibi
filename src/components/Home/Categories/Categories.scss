@@ -66,7 +66,7 @@
 //   }
 // }
 .category_section-container {
-  margin: 2rem 1rem;
+  margin: 2rem 10vw;
 }
 
 .category-header {
@@ -79,7 +79,7 @@
   position: relative;
   display: flex;
   flex-direction: row;
-  overflow-x: auto;
+  overflow-x: hidden;
   gap: 1rem;
   // @media (990px>width>60px) {
   //   display: grid;
@@ -94,8 +94,15 @@
 .slider-button {
   position: relative;
   button {
-    box-shadow: 1px 1px black;
+    padding: 20px;
+
+    svg {
+      position: absolute;
+      right: 10%;
+      bottom: 9%;
+    }
   }
+
   .scroll-btn1 {
     left: 12px;
     position: sticky;
